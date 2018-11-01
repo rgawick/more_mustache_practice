@@ -15,19 +15,21 @@
       <input type="submit" value="Submit" />
     </form>
     <ul>
-    {{#movies}}
-      <form action="/delete-movie" method="POST">
+
+        {{#movies}}
+        <form action="/delete-movie" method="POST">
         <li>{{title}}</li>
-        <input type="hidden" name="tripName" value="{{name}}"/>
+        <input type="hidden" name="movieName" value="{{title}}"/>
         <li>{{genre}}</li>
         <input type="hidden" name="genreName" value="{{genre}}"/>
         <li>{{description}}</li>
         <input type="hidden" name="descriptionName" value="{{description}}"/>
-        <li>{{posterURL}}</li>
+        <li><img src="{{posterURL}}" style="height:100px ; width:100px;"/></li>
         <input type="hidden" name="posterURLName" value="{{posterURL}}"/>
         <input type="submit" value="Remove" />
-      </form>
-    {{/movies}}
+        </form>
+        {{/movies}}
+
   </ul>
 
 

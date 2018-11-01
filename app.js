@@ -22,11 +22,16 @@ app.post("/add_movie",function(req,res){
   let description = req.body.description
   let posterURL = req.body.posterURL
   movies.push({title : title , genre : genre , description : description, posterURL : posterURL })
+  console.log(movies)
   res.redirect("/add-movie")
 })
 
 app.get('/add-movie',function(req,res){
   res.render('add-movie', {movies : movies})
+})
+
+app.post('/add-movie',function(req,res){
+  res.redirect('/')
 })
 
 app.get('/',function(req,res){
@@ -40,15 +45,10 @@ app.post('/delete-movie',function(req,res){
     let description = req.body.descriptionName
     let posterURL = req.body.posterURLName
 
-
-    movies = movies.filter(function(x){
-      return x.name != name
-      return x.genre != genre
-      return x.description != description
-      return x.posterURL != posterURL
+    movies = movies.filter(function(movie){
+      return movie.title != name
 
     })
-
   res.redirect('/')
 
 })
