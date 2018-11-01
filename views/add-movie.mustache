@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="/site.css" /> -->
+  </head>
+  <body>
+    <h1>The following Movie was Added!!</h1>
+<ul>
+    {{#movies}}
+<li>{{title}}</li>
+<li>{{genre}}</li>
+<li>{{description}}</li>
+<li><img src="{{posterURL}}" style="width: 100px; height: 100px"/></li>
+  {{/movies}}
+</ul>
+<form action="/">
+    <input type="submit" value="Back to Main Page" />
+</form>
+
+  </body>
+</html>

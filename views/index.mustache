@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <link rel="stylesheet" type="text/css" href="/site.css" /> -->
+  </head>
+  <body>
+    <h1> Welcome to Movie Creator! </h1>
+    <form action="/add_movie" method="POST">
+      <input type="text" name = "title" placeholder="Movie Title"/>
+      <input type="text" name="genre" placeholder="Genre"/>
+      <input type="text" name="description" placeholder="Description"/>
+      <input type="text" name="posterURL" placeholder="Poster URL" />
+      <input type="submit" value="Submit" />
+    </form>
+    <ul>
+    {{#movies}}
+      <form action="/delete-movie" method="POST">
+        <li>{{title}}</li>
+        <input type="hidden" name="tripName" value="{{name}}"/>
+        <li>{{genre}}</li>
+        <input type="hidden" name="genreName" value="{{genre}}"/>
+        <li>{{description}}</li>
+        <input type="hidden" name="descriptionName" value="{{description}}"/>
+        <li>{{posterURL}}</li>
+        <input type="hidden" name="posterURLName" value="{{posterURL}}"/>
+        <input type="submit" value="Remove" />
+      </form>
+    {{/movies}}
+  </ul>
+
+
+  </body>
+</html>
